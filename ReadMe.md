@@ -1,0 +1,1 @@
+This project is on the gmail app, it opens a gmail account, deletes primary email and clicks on the google apps button. The test scripts are based on Selenium, TestNG.

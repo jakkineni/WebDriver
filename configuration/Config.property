@@ -1,0 +1,12 @@
+BrowserName=Chrome
+ChromeDriver=C:\\Users\\SunnyBunny\\selenium-java-3.141.59\\chromedriver.exe
+IEDriver=
+
+
+URL=http://www.gmail.com
+
+
+UID=webdriver.jk
+Password=Web2018!
+
+ResourcePath=C:\\Users\\SunnyBunny\\eclipse-workspace\\Selenium\\webdriver\\imgresources
