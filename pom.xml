@@ -13,6 +13,7 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+  
 
   <dependencies>
     <dependency>
@@ -54,6 +55,11 @@
     <version>0.9</version>
 </dependency>
 
+<dependency>
+	<groupId>com.applitools</groupId>
+	<artifactId>eyes-selenium-java4</artifactId>
+	<version>4.0.0</version>
+</dependency>
 
 </dependencies>  
 </project>

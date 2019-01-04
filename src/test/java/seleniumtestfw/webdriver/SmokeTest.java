@@ -6,12 +6,16 @@ import org.testng.*;
 import org.testng.annotations.Test;
 
 import com.gmail.pages.gmailLoginPageFactory;
+import com.gmail.pages.testGApp;
+
 import utility.BrowserFactory;
 import utility.ConfigReader;
 import com.gmail.pages.LoadGmailHomePage;
 import com.gmail.pages.MailPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 
@@ -55,14 +59,23 @@ public class SmokeTest {
 			
 	
 		@Test(priority=3)
-		public void googleapps() throws Exception {
+		public void clickgoogleapps() throws Exception {
 		MailPage mpage = new MailPage(driver);
 		mpage.selectanddeleteprimaryemail();
 		mpage.clickAppbutton();
 		AssertJUnit.assertTrue(mpage.verifyMapsButton());
 		System.out.println("google apps button was clicked");
-		//AssertJUnit.assertTrue(mpage.GoogleApps_screenshot());
 		
+		}
+		
+		@Test(priority=4)
+		public void googleapps() throws Exception {
+		ConfigReader gappReader = new ConfigReader();
+		WebElement accountelement;
+		testGApp gapp = new testGApp(driver);		
+		accountelement = driver.findElement(By.xpath("//*[@id=\"gb192\"]"));
+		AssertJUnit.assertTrue(gapp.testAppVisible("Account", gappReader.getgappAccounturl(), accountelement));
+		System.out.println("google apps account button was clicked");		
 		}
 		
 	}

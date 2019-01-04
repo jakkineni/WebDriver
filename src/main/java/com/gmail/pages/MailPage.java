@@ -10,8 +10,11 @@ import java.util.List;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.How;
@@ -21,6 +24,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.assertthat.selenium_shutterbug.core.Shutterbug;
 import com.assertthat.selenium_shutterbug.utils.web.ScrollStrategy;
+import com.applitools.eyes.selenium.Eyes;
+
 
 import utility.PerformActions;
 
@@ -49,6 +54,7 @@ public class MailPage {
 	}
 	
 	public boolean verifyMapsButton() {
+		explicitwait = new WebDriverWait(driver,100);
 		if((driver.findElement(By.xpath("//a[@href='https://maps.google.com/maps?hl=en&tab=ml']"))).isDisplayed()) {
 			return true;
 		}
@@ -61,37 +67,19 @@ public class MailPage {
 		explicitwait = new WebDriverWait(driver,100);
 		explicitwait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id=':33']/div[1]/span")));
 		WebElement select_checkbox = driver.findElement(By.xpath("//*[@id=':33']/div[1]/span"));
-		select_checkbox.click();
-		String status_selectcheckbox = select_checkbox.getAttribute("aria-checked");
-		System.out.println(status_selectcheckbox);
+		WebElement delete_button = driver.findElement(By.xpath("//*[@id=\":5\"]/div/div[1]/div[1]/div/div/div[2]/div[3]"));
+		WebElement inbox_settingsLink = driver.findElement(By.xpath("//*[@id=\":3e\"]"));
 		
-		//if (status_selectcheckbox == "true") {
-			WebElement delete_button = driver.findElement(By.xpath("//*[@id=\":5\"]/div/div[1]/div[1]/div/div/div[2]/div[3]"));
+		if (inbox_settingsLink.isDisplayed()) {
+			System.out.println("No Primary Email present");			
+		}
+		else if (select_checkbox.isDisplayed()) {
+			select_checkbox.click();
+			String status_selectcheckbox = select_checkbox.getAttribute("aria-checked");
+			System.out.println(status_selectcheckbox);
 			delete_button.click();
-		//}
-		//else {
-			//System.out.println("Unable to delete email");
-		//}
-		
-	} 
-	
-	public boolean MailPage_screenshot() {
-		//WebElement gapps;
-		String imgresource_path = "C:\\Users\\SunnyBunny\\eclipse-workspace\\Selenium\\webdriver\\imgresources";
-		File image = new File(imgresource_path + "\\gApps.jpg");
-		//BufferedImage expectedimage = ImageIO.read(image);
-		
-		Boolean ImagePresent = (Boolean) ((JavascriptExecutor)driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0", image);
-		
-		if (!ImagePresent) {
-			System.out.println("Image not present");
-			return false;
-		}
-		else {
-			System.out.println("Image present");
-			return true;
-		}
-				
-		//Shutterbug.(driver,ScrollStrategy.BOTH_DIRECTIONS).withName("GApps").save("imgresource_path");
+			System.out.println("Primary Email deleted");		
+		} 	
 	}
 }
+

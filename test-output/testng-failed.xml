@@ -5,7 +5,6 @@
     <classes>
       <class name="seleniumtestfw.webdriver.SmokeTest">
         <methods>
-          <include name="GmailLogin"/>
           <include name="googleapps"/>
         </methods>
       </class> <!-- seleniumtestfw.webdriver.SmokeTest -->

@@ -7,13 +7,19 @@ import java.util.Properties;
 public class ConfigReader {
 	
 	Properties configProperties;
+	Properties gappProperties;
 	
 	public ConfigReader(){
 		try {
 			File configsrc = new File("./configuration/Config.property");
 			FileInputStream fis = new FileInputStream(configsrc);
 			configProperties = new Properties();
-			configProperties.load(fis);	
+			configProperties.load(fis);
+			
+			File gappsrc = new File("./configuration/appurl.property");
+			FileInputStream fis_gapp = new FileInputStream(gappsrc);
+			gappProperties = new Properties();
+			gappProperties.load(fis_gapp);
 			}
 		catch (Exception e) {
 			System.out.println("Excpeion is:" + e.getMessage());
@@ -51,10 +57,8 @@ public class ConfigReader {
 		return browserName;		
 	}
 	
-	public static void main(String args[]) {
-		ConfigReader c = new ConfigReader();
-		String uid = c.getUserID();
-		System.out.print(uid);
-		
+	public String getgappAccounturl() {
+		String gappAccounturl = gappProperties.getProperty("account");
+		return gappAccounturl;
 	}
 }
