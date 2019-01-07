@@ -42,6 +42,7 @@ public class MailPage {
 	WebDriver driver;
 	WebElement e;
 	WebDriverWait explicitwait;
+	Eyes eyes;
 	
 	public MailPage(WebDriver ldriver) {
 		this.driver=ldriver;
@@ -81,5 +82,7 @@ public class MailPage {
 			System.out.println("Primary Email deleted");		
 		} 	
 	}
+	
+	
 }
 

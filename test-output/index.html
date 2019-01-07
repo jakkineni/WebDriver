@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-failed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\SunnyBunny\AppData\Local\Temp\testng-eclipse--2046868976\testng-customsuite.xml</span>
+                    <span>C:\Users\SunnyBunny\AppData\Local\Temp\testng-eclipse-2134193704\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Default_suite">
+                      <span>
+                        <img width="3%" src="failed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="seleniumtestfw.webdriver.SmokeTest" hash-for-method="googleapps">googleapps</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Default_suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -115,11 +129,6 @@
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="seleniumtestfw.webdriver.SmokeTest" hash-for-method="clickgoogleapps">clickgoogleapps</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="seleniumtestfw.webdriver.SmokeTest" hash-for-method="googleapps">googleapps</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
@@ -132,6 +141,52 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">seleniumtestfw.webdriver.SmokeTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="googleapps">
+                  </a> <!-- googleapps -->
+                  <span class="method-name">googleapps</span>
+                  <div class="stack-trace">com.applitools.eyes.exceptions.DiffsFoundException: Test &apos;mail page&apos; of &apos;gmailapp&apos; detected differences! See details at: https://eyes.applitools.com/app/batches/00000251855409878966/00000251855409878841?accountId=l9PF2X9AhEy6VpeYN7EGZQ~~
+	at com.applitools.eyes.EyesBase.close(EyesBase.java:793)
+	at com.applitools.eyes.EyesBase.close(EyesBase.java:735)
+	at seleniumtestfw.webdriver.SmokeTest.googleapps(SmokeTest.java:88)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:580)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:716)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:988)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-failed -->
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -159,19 +214,12 @@
                   <span class="method-name">clickgoogleapps</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="googleapps">
-                  </a> <!-- googleapps -->
-                  <span class="method-name">googleapps</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\SunnyBunny\AppData\Local\Temp\testng-eclipse--2046868976\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\SunnyBunny\AppData\Local\Temp\testng-eclipse-2134193704\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -222,26 +270,26 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'GmailLogin')
+data.setCell(0, 1, 'googleapps')
 data.setCell(0, 2, 'seleniumtestfw.webdriver.SmokeTest')
-data.setCell(0, 3, 9209);
+data.setCell(0, 3, 51989);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'VerifyGmail')
+data.setCell(1, 1, 'GmailLogin')
 data.setCell(1, 2, 'seleniumtestfw.webdriver.SmokeTest')
-data.setCell(1, 3, 2237);
+data.setCell(1, 3, 8293);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'clickgoogleapps')
+data.setCell(2, 1, 'VerifyGmail')
 data.setCell(2, 2, 'seleniumtestfw.webdriver.SmokeTest')
-data.setCell(2, 3, 535);
+data.setCell(2, 3, 1824);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'googleapps')
+data.setCell(3, 1, 'clickgoogleapps')
 data.setCell(3, 2, 'seleniumtestfw.webdriver.SmokeTest')
-data.setCell(3, 3, 123);
+data.setCell(3, 3, 606);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 12 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -274,15 +322,17 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">GmailLogin</span>
-                <span class="method-start">2239 ms</span>
+                <span class="method-start">1826 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">clickgoogleapps</span>
-                <span class="method-start">11451 ms</span>
+                <span class="method-start">10129 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">googleapps</span>
-                <span class="method-start">11987 ms</span>
+                <span class="method-start">10735 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -10,6 +10,8 @@ import com.gmail.pages.testGApp;
 
 import utility.BrowserFactory;
 import utility.ConfigReader;
+
+import com.applitools.eyes.selenium.Eyes;
 import com.gmail.pages.LoadGmailHomePage;
 import com.gmail.pages.MailPage;
 
@@ -22,14 +24,13 @@ import org.openqa.selenium.support.PageFactory;
 public class SmokeTest {
 	
 	ConfigReader config;
-	
+	Eyes eyes;
 	WebDriver driver = BrowserFactory.startbrowser();
 	
 	@Test(priority=1)
 	public void VerifyGmail() {	
 		LoadGmailHomePage gmailhomepage = PageFactory.initElements(driver, LoadGmailHomePage.class);
 		gmailhomepage.loadpage();
-		//gmailhomepage.loadpage();
 		String expectedTitle = "Gmail"; 
 		System.out.println(gmailhomepage.getPageTitle());
 			
@@ -65,7 +66,7 @@ public class SmokeTest {
 		mpage.clickAppbutton();
 		AssertJUnit.assertTrue(mpage.verifyMapsButton());
 		System.out.println("google apps button was clicked");
-		
+		//mpage.comparescreenshot();
 		}
 		
 		@Test(priority=4)
@@ -75,7 +76,17 @@ public class SmokeTest {
 		testGApp gapp = new testGApp(driver);		
 		accountelement = driver.findElement(By.xpath("//*[@id=\"gb192\"]"));
 		AssertJUnit.assertTrue(gapp.testAppVisible("Account", gappReader.getgappAccounturl(), accountelement));
-		System.out.println("google apps account button was clicked");		
+		System.out.println("google apps account button was clicked");
+		
+		
+			eyes = new Eyes();
+			String apiKey = "AI7c8MXnzxmldYGC98BujYVlDz5w5JbkwJrDut104PnzAk110";
+			eyes.setApiKey(apiKey);
+			
+			eyes.open(driver, "gmailapp", "mail page");
+			eyes.checkWindow("mail page window");
+			eyes.close();
+			
 		}
 		
 	}
