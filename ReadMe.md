@@ -2,4 +2,4 @@ This project is on the gmail app, it opens a gmail account, deletes primary emai
 
 TBD:
 Add code to click on default gapps and verify that they land appropriately
-Add code for data driven, work on coming up with scenarios and test cases.
+Add code for data driven tests
